@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CounterView">
+
+        <attr name="background_color" format="color" />
+        <attr name="border_color" format="color" />
+        <attr name="text_size" format="dimension" />
+        <attr name="text" format="string"/>
+        <attr name="text_color" format="color" />
+        <attr name="border_width" format="dimension"/>
+
+    </declare-styleable>
+
+    <!--标签布局的设置，标签分为横向和竖向二种形式，如果是横向的话就有点像是网易新闻导航栏-->
+    <declare-styleable name="TabCaroLayoutView">
+        <attr name="horizontalSpace" format="dimension"/>
+        <attr name="verticalSpace" format="dimension"/>
+        <attr name="orientation" format="enum">
+            <enum name="Horizontal" value="0"/>
+            <enum name="Vertical" value="1"/>
+        </attr>
+    </declare-styleable>
+   <declare-styleable name="TabCaroLayoutView_LayoutParams">
+       <attr name="layout_newLine" format="boolean"/>
+       <attr name="layout_horizontalSpace" format="dimension"/>
+       <attr name="layout_verticalSpace" format="dimension"/>
+   </declare-styleable>
+
+    <declare-styleable name="CommentListView">
+        <attr name="item_color" format="color"/>
+        <attr name="item_selector_color" format="color"/>
+    </declare-styleable>
+
+</resources>

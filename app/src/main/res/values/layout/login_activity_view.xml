@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_theme_color"
+    android:fitsSystemWindows="true">
+
+
+    <ImageView
+        android:id="@+id/login_app_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_48_dp"
+        android:scaleType="center"
+        android:src="@mipmap/ic_launcher" />
+
+    <RelativeLayout
+        android:id="@+id/login_one_rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_app_login"
+        android:layout_marginTop="@dimen/margin_24_dp"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/login_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_10_dp"
+            android:layout_marginStart="@dimen/margin_10_dp"
+            android:background="@null"
+            android:hint="手机号"
+            android:padding="@dimen/margin_10_dp"
+            android:textColorHint="@color/hint_color"
+            android:textSize="@dimen/font_size_16" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/login_one_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1_dp"
+        android:layout_below="@+id/login_one_rel"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/login_two_rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_one_line"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/login_forget_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/margin_10_dp"
+            android:layout_marginRight="@dimen/margin_10_dp"
+            android:text="忘记密码"
+            android:textColor="@color/low_blue"
+            android:textSize="@dimen/font_size_14" />
+
+
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_10_dp"
+            android:layout_marginStart="@dimen/margin_10_dp"
+            android:layout_toLeftOf="@+id/login_forget_password"
+            android:layout_toStartOf="@+id/login_forget_password"
+            android:background="@null"
+            android:hint="密码"
+            android:inputType="textPassword"
+            android:padding="@dimen/margin_10_dp"
+            android:textColorHint="@color/hint_color"
+            android:textSize="@dimen/font_size_16" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/login_two_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1_dp"
+        android:layout_below="@+id/login_two_rel"
+        android:background="@color/line_color" />
+
+    <TextView
+        android:id="@+id/start_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_two_line"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="@dimen/margin_24_dp"
+        android:layout_marginLeft="@dimen/margin_24_dp"
+        android:layout_marginRight="@dimen/margin_24_dp"
+        android:layout_marginStart="@dimen/margin_24_dp"
+        android:layout_marginTop="@dimen/margin_72_dp"
+        android:background="@drawable/but_selected_drawable"
+        android:gravity="center"
+        android:paddingBottom="@dimen/margin_10_dp"
+        android:paddingTop="@dimen/margin_10_dp"
+        android:text="登录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_18" />
+
+
+    <TextView
+        android:id="@+id/login_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="客服热线400-1766-110"
+        android:layout_above="@+id/login_copyright"
+        android:textColor="@color/low_blue"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/font_size_11"
+        android:layout_marginBottom="-5dp"/>
+
+    <TextView
+        android:id="@+id/login_copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/margin_10_dp"
+        android:textColor="@color/low_blue"
+        android:text="copyright2017汇集源科技"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/font_size_11" />
+
+</RelativeLayout>
