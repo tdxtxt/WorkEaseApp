@@ -1,4 +1,4 @@
-package com.wanny.workease.system.framework_ui.fragment;
+package com.wanny.workease.system.framework_ui.customer_UI.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
