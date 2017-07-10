@@ -26,6 +26,17 @@ public interface ApiStores {
     @GET("u/login")
     Observable<LoginResult> login(@Query("mobile") String mobile , @Query("password") String password);
 
+
+    @GET("u/register")
+    Observable<LoginResult> register(@Query("mobile") String mobile , @Query("password") String password,@Query("type") String type , @Query("userName") String userName,@Query("areaId") String areaId, @Query("jobTypeId") String jobTypeId,@Query("senior") String senior);
+//
+
+
+    @GET("task/getTaskes")
+    Observable<LoginResult> getTaskes(@Query("mobile") String mobile , @Query("password") String password);
+
+
+    //注册
 //     //获取列表
 //    @GET("Project/GetBackPriceList")
 //    Observable<String> getBackPriceList(@Query("page") int page, @Query("pageSize") int pageSize, @Query("type") int type, @Query("key") String key);

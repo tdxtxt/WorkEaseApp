@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/low_blue"
+
+        >
+
+        <TextView
+            android:id="@+id/city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/margin_10_dp"
+            android:text="重庆"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_16" />
+
+        <TextView
+            android:id="@+id/main_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/city_name"
+            android:layout_toEndOf="@+id/city_name"
+            android:layout_margin="@dimen/margin_10_dp"
+            android:padding="@dimen/margin_5_dp"
+            android:background="@drawable/search_drawable"
+            android:text="搜索"
+            />
+    </RelativeLayout>
+    <include layout="@layout/orinal_recycler_view"/>
+</LinearLayout>

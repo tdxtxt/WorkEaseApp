@@ -7,11 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.google.gson.Gson;
 import com.wanny.workease.system.R;
 import com.wanny.workease.system.framework_basicutils.PreferenceUtil;
-import com.wanny.workease.system.framework_care.ActivityStackManager;
 import com.wanny.workease.system.framework_care.OrdinalResultEntity;
 import com.wanny.workease.system.framework_mvpbasic.MvpActivity;
 import com.wanny.workease.system.framework_uikite.dialog.HiFoToast;
@@ -42,6 +39,11 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginI
     @BindView(R.id.start_login)
     TextView startLogin;
 
+    @BindView(R.id.start_register)
+    TextView startRegister;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,12 +63,10 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginI
             new HiFoToast(mContext,"请输入账号");
             return;
         }
-
         if(TextUtils.isEmpty(loginPassword.getText().toString())){
             new HiFoToast(mContext,"请输入密码");
             return;
         }
-
         if(mvpPresenter != null){
             mvpPresenter.login(loginUsername.getText().toString(),loginPassword.getText().toString(),"正在登录");
         }
@@ -83,13 +83,21 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginI
 //               ActivityStackManager.getInstance().exitActivity(mActivity);
            }
         }else{
-
             if(!TextUtils.isEmpty(loginResult.getMsg())){
                 new HiFoToast(mContext,loginResult.getMsg());
             }
         }
 
     }
+
+
+    @OnClick(R.id.start_register)
+    void startRegiseter(View view){
+        Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+        startActivityForResult(intent,0x0001);
+    }
+
+
 
     @Override
     public void fail(String errorMessage) {

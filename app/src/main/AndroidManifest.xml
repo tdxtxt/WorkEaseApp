@@ -61,9 +61,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/ImageTranslucentTheme">
         <activity
-            android:name=".framework_ui.customer_UI.activity.LoginActivity"
+            android:name=".framework_ui.customer_UI.activity.HomeManagerActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -71,6 +71,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+<!--
+        <activity android:name=".framework_ui.customer_UI.activity.HomeManagerActivity"
+            android:theme="@style/ImageTranslucentTheme"/>-->
+
+        <activity android:name=".framework_ui.customer_UI.activity.RegisterActivity"
+            android:theme="@style/ImageTranslucentTheme"/>
+
     </application>
 
 </manifest>

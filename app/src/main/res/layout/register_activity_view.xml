@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/app_theme_color"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/title_view"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_24_dp"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/register_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:inputType="phone|number"
+            android:layout_marginLeft="@dimen/margin_10_dp"
+            android:layout_marginStart="@dimen/margin_10_dp"
+            android:background="@null"
+            android:hint="请输入手机号"
+            android:padding="@dimen/margin_10_dp"
+            android:textColorHint="@color/hint_color"
+            android:textSize="@dimen/font_size_16" />
+
+    </RelativeLayout>
+  <!--  <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1_dp"
+        android:background="@color/line_color" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <TextView
+            android:id="@+id/register_checkcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/margin_10_dp"
+            android:layout_marginEnd="@dimen/margin_10_dp"
+            android:layout_centerVertical="true"
+            android:text="获取验证码"
+            android:textSize="@dimen/font_size_14"
+            android:textColor="@color/low_blue"
+            />
+
+
+        <EditText
+            android:id="@+id/register_checkcode_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:inputType="number"
+            android:layout_toLeftOf="@+id/register_checkcode"
+            android:layout_toStartOf="@+id/register_checkcode"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_10_dp"
+            android:layout_marginStart="@dimen/margin_10_dp"
+            android:background="@null"
+            android:hint="请输入验证码"
+            android:padding="@dimen/margin_10_dp"
+            android:textColorHint="@color/hint_color"
+            android:textSize="@dimen/font_size_16" />
+
+    </RelativeLayout>
+-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1_dp"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/register_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:inputType="textPassword"
+            android:layout_marginLeft="@dimen/margin_10_dp"
+            android:layout_marginStart="@dimen/margin_10_dp"
+            android:background="@null"
+            android:hint="请输入密码"
+            android:padding="@dimen/margin_10_dp"
+            android:textColorHint="@color/hint_color"
+            android:textSize="@dimen/font_size_16" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1_dp"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/register_sure_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:inputType="textPassword"
+            android:layout_marginLeft="@dimen/margin_10_dp"
+            android:layout_marginStart="@dimen/margin_10_dp"
+            android:background="@null"
+            android:hint="确认密码"
+            android:padding="@dimen/margin_10_dp"
+            android:textColorHint="@color/hint_color"
+            android:textSize="@dimen/font_size_16" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1_dp"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/register_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_10_dp"
+            android:layout_marginStart="@dimen/margin_10_dp"
+            android:background="@null"
+            android:hint="姓名"
+            android:padding="@dimen/margin_10_dp"
+            android:textColorHint="@color/hint_color"
+            android:textSize="@dimen/font_size_16" />
+
+    </RelativeLayout>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1_dp"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <TextView
+            android:id="@+id/register_area_name"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/font_size_16"
+            android:textColor="@color/text_half_black"
+            android:text="请输入所在地："
+            android:layout_marginLeft="@dimen/margin_20_dp"
+            android:layout_marginStart="@dimen/margin_20_dp"
+            />
+
+        <EditText
+            android:id="@+id/register_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/register_area_name"
+            android:layout_toEndOf="@+id/register_area_name"
+            android:layout_marginLeft="@dimen/margin_10_dp"
+            android:layout_marginStart="@dimen/margin_10_dp"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:hint="所在地"
+            android:padding="@dimen/margin_10_dp"
+            android:textColorHint="@color/hint_color"
+            android:textSize="@dimen/font_size_16" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1_dp"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+
+        <TextView
+            android:id="@+id/register_type"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/font_size_16"
+            android:textColor="@color/text_half_black"
+            android:text="工种"
+            android:layout_marginLeft="@dimen/margin_20_dp"
+            android:layout_marginStart="@dimen/margin_20_dp"
+            />
+
+
+        <TextView
+            android:id="@+id/register_typeselect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_10_dp"
+            android:layout_marginStart="@dimen/margin_10_dp"
+            android:hint="请选择工种"
+            android:padding="@dimen/margin_10_dp"
+            android:drawableRight="@mipmap/icon_body_upper"
+            android:drawableEnd="@mipmap/icon_body_upper"
+            android:drawablePadding="@dimen/margin_5_dp"
+            android:textSize="@dimen/font_size_16" />
+
+    </RelativeLayout>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1_dp"
+        android:background="@color/line_color" />
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+         <TextView
+             android:id="@+id/register_workertime_index"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerVertical="true"
+             android:layout_alignParentRight="true"
+             android:layout_alignParentEnd="true"
+             android:textSize="@dimen/font_size_16"
+             android:textColor="@color/text_half_black"
+             android:layout_marginRight="@dimen/margin_10_dp"
+             android:layout_marginEnd="@dimen/margin_10_dp"
+             android:text="年"/>
+
+
+
+        <TextView
+            android:id="@+id/register_workertime_lab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/font_size_16"
+            android:textColor="@color/text_half_black"
+            android:layout_marginLeft="@dimen/margin_20_dp"
+            android:layout_marginStart="@dimen/margin_20_dp"
+            android:text="工龄"
+            />
+
+        <EditText
+            android:id="@+id/register_workertime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10_dp"
+            android:layout_marginStart="@dimen/margin_10_dp"
+            android:layout_toLeftOf="@+id/register_workertime_index"
+            android:layout_toStartOf="@+id/register_workertime_index"
+            android:layout_toRightOf="@+id/register_workertime_lab"
+            android:layout_toEndOf="@+id/register_workertime_lab"
+            android:background="@null"
+            android:hint="请输入工龄"
+            android:padding="@dimen/margin_10_dp"
+            android:textColorHint="@color/hint_color"
+            android:textSize="@dimen/font_size_16" />
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1_dp"
+        android:background="@color/line_color" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/register_skilllevel"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/font_size_16"
+            android:textColor="@color/text_half_black"
+            android:text="技术熟练度"
+            android:layout_marginLeft="@dimen/margin_20_dp"
+            android:layout_marginStart="@dimen/margin_20_dp"
+            />
+
+        <TextView
+            android:id="@+id/register_skilllevelselect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_10_dp"
+            android:layout_marginStart="@dimen/margin_10_dp"
+            android:hint="请选择熟练程度"
+            android:padding="@dimen/margin_10_dp"
+            android:drawableRight="@mipmap/icon_body_upper"
+            android:drawableEnd="@mipmap/icon_body_upper"
+            android:drawablePadding="@dimen/margin_5_dp"
+            android:textSize="@dimen/font_size_16" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/start_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注册"
+        android:textSize="@dimen/font_size_18"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/but_selected_drawable"
+        android:layout_marginTop="@dimen/margin_72_dp"
+        android:layout_marginLeft="@dimen/margin_24_dp"
+        android:layout_marginRight="@dimen/margin_24_dp"
+        android:layout_marginStart="@dimen/margin_24_dp"
+        android:layout_marginEnd="@dimen/margin_24_dp"
+        android:paddingTop="@dimen/margin_8_dp"
+        android:paddingBottom="@dimen/margin_8_dp"
+        android:textColor="@color/white"
+        />
+
+</LinearLayout>
+
+
+
+

@@ -115,6 +115,27 @@
         android:textColor="@color/white"
         android:textSize="@dimen/font_size_18" />
 
+    <TextView
+        android:id="@+id/start_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/start_login"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="@dimen/margin_24_dp"
+        android:layout_marginLeft="@dimen/margin_24_dp"
+        android:layout_marginRight="@dimen/margin_24_dp"
+        android:layout_marginStart="@dimen/margin_24_dp"
+        android:layout_marginTop="@dimen/margin_10_dp"
+        android:background="@drawable/but_notselect_drawable"
+        android:gravity="center"
+        android:paddingBottom="@dimen/margin_10_dp"
+        android:paddingTop="@dimen/margin_10_dp"
+        android:text="注册"
+        android:textColor="@color/low_blue"
+        android:textSize="@dimen/font_size_18" />
+
+
+
 
     <TextView
         android:id="@+id/login_phone"
@@ -134,7 +155,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="@dimen/margin_10_dp"
         android:textColor="@color/low_blue"
-        android:text="copyright2017汇集源科技"
+        android:text="copyright2017重庆易知工网络科技有限公司"
         android:layout_centerHorizontal="true"
         android:textSize="@dimen/font_size_11" />
 
