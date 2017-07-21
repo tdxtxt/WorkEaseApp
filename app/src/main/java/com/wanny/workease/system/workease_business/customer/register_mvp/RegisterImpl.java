@@ -12,5 +12,7 @@ import com.wanny.workease.system.framework_mvpbasic.BaseOperateImp;
  */
 public interface RegisterImpl extends BaseOperateImp<OrdinalResultEntity> {
 
-    void registerSuccess(OrdinalResultEntity entity);
+    void registerSuccess(RegisterResult entity);
+    void workType(WorkTypeResult entity);
+    void getCityValue(CityResult cityResult);
 }

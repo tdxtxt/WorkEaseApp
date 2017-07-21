@@ -169,33 +169,39 @@
         android:layout_height="wrap_content"
         android:background="@color/white">
         <TextView
-            android:id="@+id/register_area_name"
+            android:id="@+id/register_area_provice"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
+            android:text="请选择省/市："
+            android:padding="@dimen/margin_10_dp"
+            android:drawableRight="@mipmap/icon_body_upper"
+            android:drawableEnd="@mipmap/icon_body_upper"
+            android:drawablePadding="@dimen/margin_5_dp"
             android:textSize="@dimen/font_size_16"
-            android:textColor="@color/text_half_black"
-            android:text="请输入所在地："
-            android:layout_marginLeft="@dimen/margin_20_dp"
-            android:layout_marginStart="@dimen/margin_20_dp"
-            />
-
-        <EditText
-            android:id="@+id/register_area"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/register_area_name"
-            android:layout_toEndOf="@+id/register_area_name"
             android:layout_marginLeft="@dimen/margin_10_dp"
             android:layout_marginStart="@dimen/margin_10_dp"
+            />
+
+        <TextView
+            android:id="@+id/register_area"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:background="@null"
-            android:hint="所在地"
+            android:layout_width="wrap_content"
+            android:text="请选择市/区："
             android:padding="@dimen/margin_10_dp"
-            android:textColorHint="@color/hint_color"
-            android:textSize="@dimen/font_size_16" />
+            android:drawableRight="@mipmap/icon_body_upper"
+            android:drawableEnd="@mipmap/icon_body_upper"
+            android:drawablePadding="@dimen/margin_5_dp"
+            android:textSize="@dimen/font_size_16"
+            android:layout_marginLeft="@dimen/margin_10_dp"
+            android:layout_marginStart="@dimen/margin_10_dp" />
+
+
     </RelativeLayout>
 
     <View

@@ -18,8 +18,14 @@ import com.wanny.workease.system.framework_mvpbasic.MvpActivity;
 import com.wanny.workease.system.framework_uikite.WaitDialog;
 import com.wanny.workease.system.framework_uikite.dialog.HiFoToast;
 import com.wanny.workease.system.framework_uikite.dialog.IOSDialogView;
+import com.wanny.workease.system.workease_business.customer.register_mvp.City;
+import com.wanny.workease.system.workease_business.customer.register_mvp.CityEntity;
+import com.wanny.workease.system.workease_business.customer.register_mvp.CityResult;
 import com.wanny.workease.system.workease_business.customer.register_mvp.RegisterImpl;
 import com.wanny.workease.system.workease_business.customer.register_mvp.RegisterPresenter;
+import com.wanny.workease.system.workease_business.customer.register_mvp.RegisterResult;
+import com.wanny.workease.system.workease_business.customer.register_mvp.WorkTypeResult;
+import com.wanny.workease.system.workease_business.customer.register_mvp.WoryTypeEntity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,8 +57,12 @@ public class RegisterActivity extends MvpActivity<RegisterPresenter> implements 
     @BindView(R.id.register_sure_password)
     EditText registerSurePassword;
 
+    //省选择
+    @BindView(R.id.register_area_provice)
+    TextView registerProvice;
+    //市选择
     @BindView(R.id.register_area)
-    EditText registerArea;
+    TextView registerArea;
 
     @BindView(R.id.register_typeselect)
     TextView registerTypeselect;
@@ -66,11 +76,9 @@ public class RegisterActivity extends MvpActivity<RegisterPresenter> implements 
     @BindView(R.id.start_register)
     TextView startRegister;
 
-
    //注册
     @BindView(R.id.register_username)
     TextView registerUsername;
-
 
 
     private String code = "";
@@ -112,6 +120,11 @@ public class RegisterActivity extends MvpActivity<RegisterPresenter> implements 
 
     private ArrayList<String> level = new ArrayList<>();
     private ArrayList<String> work_type = new ArrayList<>();
+    private ArrayList<String> provices = new ArrayList<>();
+    private ArrayList<String> areas = new ArrayList<>();
+
+    private ArrayList<WoryTypeEntity> workTypeList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,11 +134,79 @@ public class RegisterActivity extends MvpActivity<RegisterPresenter> implements 
         if (titleTitle != null) {
             titleTitle.setText("注册");
         }
+        initView();
+//        String[] wrokType  = getResources().getStringArray(R.array.work_type);
+//        work_type.addAll(Arrays.asList(wrokType));
+
+
+    }
+
+    private void initView(){
+        if(workTypeList == null){
+            workTypeList = new ArrayList<>();
+        }
+        if(proviceList == null){
+            proviceList = new ArrayList<>();
+        }
+        if(areadList == null){
+            areadList = new ArrayList<>();
+        }
         String[] levelRank = getResources().getStringArray(R.array.leaveRank);
         level.addAll(Arrays.asList(levelRank));
-        String[] wrokType  = getResources().getStringArray(R.array.work_type);
-        work_type.addAll(Arrays.asList(wrokType));
+        if(mvpPresenter != null){
+            mvpPresenter.getWorkType();
+        }
+        if(mvpPresenter != null){
+            mvpPresenter.getCityValue();
+        }
     }
+
+
+    @Override
+    public void workType(WorkTypeResult entity) {
+        if(entity.isSuccess()){
+            workTypeList.clear();
+            work_type.clear();
+            workTypeList.addAll(entity.getData());
+            for(WoryTypeEntity value : workTypeList){
+               work_type.add(value.getName());
+            }
+        }
+    }
+
+
+
+
+    @OnClick(R.id.register_area_provice)
+    void startSelectProvice(View view){
+        mode = MODE_PROVICE;
+        provices.clear();
+        for(CityEntity entity : proviceList){
+            provices.add(entity.getName());
+        }
+        createIOS(provices,"选择省/市");
+    }
+
+    private String selectCityId = "";
+
+    @OnClick(R.id.register_area)
+    void startSelectArea(View view){
+        mode = MODE_AREA;
+        areas.clear();
+        areadList.clear();
+        for(CityEntity entity : proviceList){
+            if(entity.getId().equals(selectCityId)){
+                  areadList.addAll(entity.getSubCitys());
+                break;
+            }
+        }
+        for(City  entity : areadList){
+            areas.add(entity.getName());
+        }
+        createIOS(areas,"选择市/区");
+    }
+
+
 
 
     @OnClick(R.id.title_left)
@@ -192,7 +273,6 @@ public class RegisterActivity extends MvpActivity<RegisterPresenter> implements 
 //    }
 
     private boolean hasRunning = false;
-
     private void startRegister() {
         if (TextUtils.isEmpty(registerPhone.getText().toString())) {
             new HiFoToast(mContext, "请输入电话号码");
@@ -206,12 +286,12 @@ public class RegisterActivity extends MvpActivity<RegisterPresenter> implements 
 
         }
         if (mvpPresenter != null) {
-            mvpPresenter.register(registerPhone.getText().toString(),registerPassword.getText().toString(),"0",registerUsername.getText().toString() ,registerArea.getText().toString(),registerTypeselect.getText().toString(),registerSkilllevelselect.getText().toString());
+            mvpPresenter.register(registerPhone.getText().toString(),registerPassword.getText().toString(),"0",registerUsername.getText().toString() ,selectAreaId,selectWorkTypeId,registerSkilllevelselect.getText().toString());
         }
     }
 
     @Override
-    public void registerSuccess(OrdinalResultEntity entity) {
+    public void registerSuccess(RegisterResult entity) {
         hasRunning = false;
         if (entity.isSuccess()) {
             if (!TextUtils.isEmpty(entity.getMsg())) {
@@ -249,6 +329,17 @@ public class RegisterActivity extends MvpActivity<RegisterPresenter> implements 
     }
 
 
+    private ArrayList<CityEntity> proviceList;
+    private ArrayList<City> areadList;
+    @Override
+    public void getCityValue(CityResult cityResult) {
+        if(cityResult.isSuccess()){
+             if(cityResult.getData() != null && cityResult.getData().size() > 0){
+                 proviceList.addAll(cityResult.getData());
+
+             }
+        }
+    }
 
     @Override
     public void success(OrdinalResultEntity ordinalResultEntity) {
@@ -257,7 +348,6 @@ public class RegisterActivity extends MvpActivity<RegisterPresenter> implements 
 
 
     private ArrayList<String> currentList = new ArrayList<>();
-
 
     private WaitDialog waitDialog;
 
@@ -283,10 +373,18 @@ public class RegisterActivity extends MvpActivity<RegisterPresenter> implements 
 
 
     private IOSDialogView iosDialogView;
+    //工种
     public static final int MODE_WORKTYPE= 0x0001;
+    //等级
     public static final int MODE_LEVEL = 0x0002;
-    private int mode = MODE_WORKTYPE;
+    //选择省
+    public static final int MODE_PROVICE = 0x0003;
+    //选择市
+    public static final int MODE_AREA = 0x0004;
 
+
+   private String selectAreaId = "";
+    private int mode = MODE_WORKTYPE;
     private void createIOS(ArrayList<String> data, String titlename) {
         if (iosDialogView == null) {
             iosDialogView = new IOSDialogView(mActivity, R.style.dialog, data, titlename);
@@ -311,6 +409,7 @@ public class RegisterActivity extends MvpActivity<RegisterPresenter> implements 
             }
         }
     };
+    private String selectWorkTypeId = "";
     private IOSDialogView.IosDialogSelectListener iosDialogSelectListener = new IOSDialogView.IosDialogSelectListener() {
         @Override
         public void onItemClick(int position) {
@@ -330,6 +429,21 @@ public class RegisterActivity extends MvpActivity<RegisterPresenter> implements 
                 if (registerTypeselect != null) {
                     if (!TextUtils.isEmpty(currentList.get(position))) {
                         registerTypeselect.setText(currentList.get(position));
+                        selectWorkTypeId = workTypeList.get(position).getId();
+                    }
+                }
+            }else if(mode == MODE_AREA){
+                if (registerArea != null) {
+                    if (!TextUtils.isEmpty(areas.get(position))) {
+                        registerArea.setText(areas.get(position));
+                        selectAreaId = areadList.get(position).getId();
+                    }
+                }
+            }else if(mode == MODE_PROVICE ){
+                if (registerProvice != null) {
+                    if (!TextUtils.isEmpty(provices.get(position))) {
+                        registerProvice.setText(provices.get(position));
+                        selectCityId = proviceList.get(position).getId();
                     }
                 }
             }
@@ -345,6 +459,4 @@ public class RegisterActivity extends MvpActivity<RegisterPresenter> implements 
             }
         }
     };
-
-
 }

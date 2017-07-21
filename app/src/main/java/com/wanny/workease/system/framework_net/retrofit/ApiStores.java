@@ -1,11 +1,11 @@
 package com.wanny.workease.system.framework_net.retrofit;
+import com.wanny.workease.system.workease_business.customer.main_mvp.WorkResult;
+import com.wanny.workease.system.workease_business.customer.register_mvp.CityResult;
+import com.wanny.workease.system.workease_business.customer.register_mvp.RegisterResult;
+import com.wanny.workease.system.workease_business.customer.register_mvp.WorkTypeResult;
 import com.wanny.workease.system.workease_business.login_mvp.LoginResult;
 
-import retrofit2.http.Body;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
 import retrofit2.http.Query;
 import rx.Observable;
 
@@ -28,12 +28,33 @@ public interface ApiStores {
 
 
     @GET("u/register")
-    Observable<LoginResult> register(@Query("mobile") String mobile , @Query("password") String password,@Query("type") String type , @Query("userName") String userName,@Query("areaId") String areaId, @Query("jobTypeId") String jobTypeId,@Query("senior") String senior);
+    Observable<RegisterResult> register(@Query("mobile") String mobile , @Query("password") String password, @Query("type") String type , @Query("userName") String userName, @Query("areaId") String areaId, @Query("jobTypeId") String jobTypeId, @Query("senior") String senior);
 //
 
 
     @GET("task/getTaskes")
     Observable<LoginResult> getTaskes(@Query("mobile") String mobile , @Query("password") String password);
+
+
+    @GET("comm/getJobTypes")
+    Observable<WorkTypeResult> getWorkType();
+
+
+    //获取城市
+    @GET("comm/allCity")
+    Observable<CityResult> getCity();
+
+
+
+    @GET("task/getTaskes")
+    Observable<WorkResult> getWorkResult(@Query("pageNum") int pageNum);
+
+    @GET("task/getTasksByAreaOrJobtype")
+    Observable<WorkResult> getWorkByAreaId(@Query("areaId") String areaId , @Query("jobTypeId") String jobTypeId ,@Query("pageNum") int pageNum);
+
+
+
+
 
 
     //注册

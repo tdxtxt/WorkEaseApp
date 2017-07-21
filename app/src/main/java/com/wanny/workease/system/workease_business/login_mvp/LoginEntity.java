@@ -12,7 +12,7 @@ import android.os.Parcelable;
 public class LoginEntity implements Parcelable {
 
 
-  private String userId;//": "07e13ec8-0d30-4470-8ec4-d9eba53c496c",
+   private String userId;//": "07e13ec8-0d30-4470-8ec4-d9eba53c496c",
     private String otherBundId;//": "tangdexiang",
     private String userName;//": "to",
     private String password;//": "123444",
