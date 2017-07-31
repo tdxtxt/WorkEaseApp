@@ -65,10 +65,10 @@ public class SearchWorkActivity extends MvpActivity<SearchWorkPresenter> impleme
     RecyclerView ordinalRecycler;
     @BindView(R.id.ordinal_refresh)
     SwipeRefreshLayout ordinalRefresh;
+    //
     private String selectWorkTypeId = "";
+    //
     private String selectAreaId = "";
-
-
 
     private WordListAdapter adapter;
     private ArrayList<WorkInfoEntity> dataList;
