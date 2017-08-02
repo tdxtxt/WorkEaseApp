@@ -56,7 +56,6 @@ public interface ApiStores {
 
 
 
-
     //注册
 //     //获取列表
 //    @GET("Project/GetBackPriceList")
